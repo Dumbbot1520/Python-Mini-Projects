@@ -2,7 +2,7 @@ import folium
 import pandas as pd
 
 # Corrected file path
-file_path = "C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/WEBMAPPING/Volcanoes.txt"
+file_path = "C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/WEBMAPPING/Volcanoes.txt" #add your respective world.json (file provided) file path
 file = pd.read_csv(file_path, header=None)
 
 # Skipping the header row and ensuring the data is numerical
@@ -44,6 +44,7 @@ for lt, ln, el, nm in zip(lat, lon, elev, nme):
                                       fill_opacity=0.7))
 
 fgp = folium.FeatureGroup(name = "Population") #create a feature group for geojson function
+# reading the json file and adding color according to the population density
 fgp.add_child(folium.GeoJson(data=open('C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/WEBMAPPING/world.json','r',
                                        encoding='utf-8-sig').read(),
                                     style_function=lambda x: { 'fillColor':'green' if x['properties']['POP2005'] < 10000000 

@@ -1,5 +1,6 @@
 import cv2
 
+#the cascade filecontains all the information on how to recognize or detect a face in any image so this file is a seperate xml file 
 face_cascade = cv2.CascadeClassifier("C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/IMAGE PROCESSING/FACEDETECTION/haarcascade_frontalface_default.xml")
 
 image = cv2.imread("C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/IMAGE PROCESSING/FACEDETECTION/face.png")
