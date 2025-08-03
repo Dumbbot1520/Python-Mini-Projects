@@ -4,7 +4,7 @@ import pandas
 from datetime import datetime,timezone
 from pytz import utc
 import matplotlib.pyplot as plt
-data = pandas.read_csv("C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/INTERACTIVE DATA VISUALISATION USING BOKEH/DATA ANALYSIS APP 3/reviews (1).csv",parse_dates=['Timestamp'])
+data = pandas.read_csv("reviews (1).csv",parse_dates=['Timestamp'])
 
 data['Week'] = data['Timestamp'].dt.strftime('%Y-%U')    
 numeric_cols = data.select_dtypes(include=['number']).columns
@@ -84,4 +84,5 @@ def app():
     return wp
 
     
+
 jp.justpy(app) # calling the app function
