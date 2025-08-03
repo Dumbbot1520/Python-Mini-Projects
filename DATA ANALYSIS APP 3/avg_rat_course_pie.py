@@ -4,7 +4,7 @@ import pandas
 from datetime import datetime,timezone
 from pytz import utc
 import matplotlib.pyplot as plt
-data = pandas.read_csv("C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/INTERACTIVE DATA VISUALISATION USING BOKEH/DATA ANALYSIS APP 3/reviews (1).csv",parse_dates=['Timestamp'])
+data = pandas.read_csv("reviews (1).csv",parse_dates=['Timestamp'])
 
 share = data.groupby(["Course Name"])["Rating"].count()
 
@@ -95,5 +95,6 @@ def app():
     hc_data = [{"name":v1,"y":v2} for v1,v2 in zip(share.index,share)]
     hc.options.series[0].data = hc_data
     return wp
+
 
 jp.justpy(app) # calling the app function
