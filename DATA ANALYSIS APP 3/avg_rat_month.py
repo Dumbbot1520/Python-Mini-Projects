@@ -3,7 +3,7 @@ import pandas
 from datetime import datetime,timezone
 from pytz import utc
 import matplotlib.pyplot as plt
-data = pandas.read_csv("C:/Users/Om/OneDrive/Documents/GitHub/pythonudemy/INTERACTIVE DATA VISUALISATION USING BOKEH/DATA ANALYSIS APP 3/reviews (1).csv",parse_dates=['Timestamp'])
+data = pandas.read_csv("reviews (1).csv",parse_dates=['Timestamp'])
 
 data['Month'] = data["Timestamp"].dt.strftime('%Y-%m')
 numeric_cols = data.select_dtypes(include= ['number']).columns
@@ -82,5 +82,6 @@ def app():
     hc.options.series[0].data = list(monthly_avg["Rating"])
 
     return wp
+
 
 jp.justpy(app) # calling the app function
